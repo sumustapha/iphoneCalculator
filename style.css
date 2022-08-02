@@ -1,15 +1,11 @@
-@font-face {
-    font-family: "San Francisco";
-    font-weight: 400;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
   :root{
     --clr-numbers:#313131;
     --clr-operations:#f69906;
     --clr-functions:#9f9f9f;
     --clr-body:#000000;
-
+    --clr-fonts:#ffffff;
   }
 
   *,
@@ -20,4 +16,223 @@
     box-sizing: border-box;
   }
 
-  
+  body,html{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Poppins, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+
+  }
+
+  .wrapper{
+    width: 390px;
+    height: 736px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    background-color: var(--clr-body);
+    padding: 0 28px;
+    box-shadow: 7px 7px 5px rgba(29, 27, 27, 0.815);
+    }
+
+    .notch{
+    height: 35px;
+    width: 100%;
+    }
+
+    .speakerCam{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .speakerCam .speaker{
+      margin: 20px 0;
+      height: 5px;
+      width: 100px;
+      border-radius: 5px;
+      background-color: #313131;
+    }
+
+    .speakerCam .camera{
+      margin: 20px 10px;
+      height: 5px;
+      width: 5px;
+      border-radius: 5px;
+      background-color: #313131;
+      
+    }
+
+    .sigBat{
+      line-height: 1.6;
+    }
+
+    .display{
+      padding-left: 10px;
+      padding-right: 15px;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 100%;
+      color: white;
+      font-size: 35px;
+    }
+
+    #screen{
+      width: 100%;
+      text-align: end;
+      overflow: hidden;
+    }
+
+    .buttons{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      row-gap: 15px;
+      column-gap: 15px;
+      grid-template-areas: 
+      "ac del percent divide"
+      "seven eight nine times"
+      "four five six minus"
+      "one two three plus"
+      "zero zero dot equals";
+    }
+
+    .buttons > .functions.allClear{
+        grid-area: ac;
+    }
+
+    .buttons > .functions.delete{
+      grid-area: del;
+    }
+
+    .buttons > .functions.percent{
+      grid-area: percent;
+    }
+
+    .buttons > .operations.divide{
+      grid-area: divide;
+    }
+
+    .buttons > .digits.seven{
+      grid-area: seven;
+    }
+
+    .buttons > .digits.eight{
+      grid-area: eight;
+    }
+
+    .buttons > .digits.nine{
+      grid-area: nine;
+    }
+
+    .buttons > .operations.times{
+      grid-area: times;
+    }
+
+    .buttons > .digits.four{
+      grid-area: four;
+    }
+
+    .buttons > .digits.five{
+      grid-area: five;
+    }
+
+    .buttons > .digits.six{
+      grid-area: six;
+    }
+
+    .buttons > .operations.minus{
+      grid-area: minus;
+    }
+
+    .buttons > .digits.one{
+      grid-area: one;
+    }
+
+    .buttons > .digits.two{
+      grid-area: two;
+    }
+
+    .buttons > .digits.three{
+      grid-area: three;
+    }
+
+    .buttons > .operations.plus{
+      grid-area: plus;
+    }
+
+    .buttons > .digits.zero{
+      grid-area: zero;
+      width: 100%;
+      padding-right: 80px;
+    }
+
+    .buttons > .digits.dot{
+      grid-area: dot;
+    }
+
+    .buttons > .equals{
+      grid-area: equals;
+      color: var(--clr-fonts);
+      background-color: var(--clr-operations);
+    }
+
+    .buttons > .equals:active{
+      transform: scale(1.05);
+      transition: 100ms;
+    }
+
+    button{
+        height: 70px;
+        width: 70px;
+        border-radius: 35px;
+        border: none;
+        outline: none;
+        color: var(--clr-fonts);
+        background-color: var(--clr-numbers);
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    button.functions{
+        background-color: var(--clr-functions);
+        color: var(--clr-body);
+    }
+
+    button.operations{
+        background-color: var(--clr-operations);
+    }
+
+    button.operations:active{
+      background-color: var(--clr-fonts);
+      color: var(--clr-operations);
+  }
+
+
+    button.digits{
+        background-color: var(--clr-numbers);
+    }
+
+    .mic{
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        height: 15px;
+        margin-bottom: 15px;
+    }
+
+    .microphone{
+      width: 125px;
+      height: 5px;
+      border-radius: 5px;
+      background-color: white;
+    }
