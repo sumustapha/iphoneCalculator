@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
+  :root{
+    --clr-numbers:#313131;
+    --clr-operations:#f69906;
+    --clr-functions:#9f9f9f;
+    --clr-body:#000000;
+
+  }
+
+  *,
+  *::before,
+  *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
