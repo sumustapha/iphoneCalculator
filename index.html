@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <title>iphone Calculator clone</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="notch">
-            <p class="time"></p>
+            <div class="time">
+                <span><p class="hour"></p></span>
+                <span><p class="min"></p></span>
+            </div>
             <div class="speakerCam">
                 <span class="speaker"></span>
                 <span class="camera"></span>
             </div>
             <div class="sigBat">
+                <img src="sig.png" alt="signalbar" width="50" height="10">
             </div>
         </div>
 
-        <div class="display"><h1 id="screen">0</h1></div>
+        <div class="display"><span><h1 id="screen">0</h1></span></div>
 
         <div class="buttons">
             <button class="functions allClear">AC</button>

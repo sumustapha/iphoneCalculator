@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Inter:wght@100&family=Poppins&family=Quicksand:wght@300&family=Roboto&display=swap');
 
   :root{
     --clr-numbers:#313131;
@@ -21,27 +21,48 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Poppins, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
 
   }
 
   .wrapper{
-    width: 390px;
+    width: 350px;
     height: 736px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 65px;
+    border-radius: 40px;
     background-color: var(--clr-body);
     padding: 0 28px;
     box-shadow: 7px 7px 5px rgba(29, 27, 27, 0.815);
     }
 
     .notch{
-    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
     width: 100%;
+    margin-top: 10px;
+    }
+
+    p{
+      font-weight: bold;
+      color: var(--clr-fonts);
+      font-size: 14px;
+    }
+
+    .time{
+      display:flex;
+      align-self: flex-end;
+    }
+
+    .time .p.hour, .time .p.min{
+      font-family: 'Roboto', Arial, Helvetica, sans-serif;
+      color: var(--clr-fonts);
+      background-color: #ffffff;
+
     }
 
     .speakerCam{
@@ -52,26 +73,28 @@
 
     .speakerCam .speaker{
       margin: 20px 0;
-      height: 5px;
-      width: 100px;
-      border-radius: 5px;
+      height: 6px;
+      width: 40px;
+      border-radius: 10px;
       background-color: #313131;
     }
 
     .speakerCam .camera{
       margin: 20px 10px;
-      height: 5px;
-      width: 5px;
-      border-radius: 5px;
+      height: 6px;
+      width: 6px;
+      border-radius: 6px;
       background-color: #313131;
-      
     }
 
     .sigBat{
-      line-height: 1.6;
+      display: flex;
+      align-self: flex-end;
+      margin-bottom: 5px;
     }
 
     .display{
+      padding-bottom: 20px;
       padding-left: 10px;
       padding-right: 15px;
       height: 100%;
@@ -81,7 +104,7 @@
       align-items: flex-end;
       width: 100%;
       color: white;
-      font-size: 35px;
+      font-size: 25px;
     }
 
     #screen{
@@ -190,14 +213,14 @@
     }
 
     button{
-        height: 70px;
-        width: 70px;
-        border-radius: 35px;
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
         border: none;
         outline: none;
         color: var(--clr-fonts);
         background-color: var(--clr-numbers);
-        font-size: 30px;
+        font-size: 28px;
         cursor: pointer;
     }
 
