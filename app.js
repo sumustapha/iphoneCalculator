@@ -6,9 +6,21 @@ let operationState = undefined
 const displayValue = document.querySelector('#screen')
 let currentOperand = displayValue.innerText
 
-displaySize = document.querySelector('.display')
+function process(num){
+    let final = num
+    if(num.includes('.')){
+        let [decimal, floating] = num.split('.')
+        return final = [Number(decimal).toLocaleString(),floating].join('.')
+    }
+    
+     return Number(final).toLocaleString()
+    
+}
+
+
 function updateDisplay(currentOperand){
-    displayValue.innerText = Number(currentOperand).toLocaleString()
+    let processedNumber = process(currentOperand)
+    displayValue.innerText = processedNumber
 }
 
 const clearScreen = document.querySelector('.functions.allClear')
@@ -54,7 +66,7 @@ function handleOperations(event){
         compute(chosenOp, storedOperand, currentOperand)
     } 
 
-    chosenOp = event.target.innerText
+    chosenOp = event.target ?? event
     if(!done) return
         storedOperand = currentOperand
         currentOperand = '0'
@@ -76,8 +88,11 @@ function handleButtons (event)
 }
 
 function appendNumber(num){
-    if(displayValue.innerText.length >= 11) return
-    if(num === '.' && num.includes('.')) return
+    if(displayValue.innerText.length >= 9) {
+        currentOperand = currentOperand
+        return
+    }
+    if(num === '.' && currentOperand.includes('.')) return
     if((num === '0') && (currentOperand.startsWith('0'))) return
     if((num !== '0') && (currentOperand === '0')) {
          currentOperand = num
@@ -85,6 +100,11 @@ function appendNumber(num){
     else{
         currentOperand = currentOperand.toString() + num.toString()}
         updateDisplay(currentOperand)
+}
+
+function appendPoint(){
+    if(currentOperand.includes('.')) return
+    currentOperand += '.'
 }
 
 const add = (augend, addend) => augend + addend
@@ -97,7 +117,10 @@ function operate (operation, a, b) {
         case '+': return add(a, b)
         case '-': return subtract(a, b)
         case '÷': return divide(a, b)
+        case '/': return divide(a, b)
         case '×': return multiply(a, b)
+        case '*': return multiply(a, b)
+
         default: return
     }
 }
@@ -113,25 +136,14 @@ setInterval(() => {
 },1000)
 
 const keyBoardButtons = window.addEventListener('keyup', getKey)
-
-
 function getKey(event){
-    console.log(event.key)
     if (event.key === 'Backspace'){deleteSingle()}
+    if (event.key === '.'){appendPoint()}
     if (event.key === 'Escape'){clear()}
     if ((event.key === 'Enter')||(event.key ==='=')){compute()}
     if (event.key === '%'){percent(event.key)}
     if ((event.key === '+')||(event.key === '-')||(event.key === '*')||(event.key === '/') ){
-        if((storedOperand !== undefined)&&(currentOperand != '0')){
-            currentOperand = displayValue.innerText
-            compute(chosenOp, storedOperand, currentOperand)
-        } 
-    
-        chosenOp = event.key
-        if(!done) return
-            storedOperand = currentOperand
-            currentOperand = '0'
-            done = false
+    handleOperations(event.key)
     }
 
     let keyBoardBtn = isNaN(parseInt(((event.key).match(/^[0-9]/g))))

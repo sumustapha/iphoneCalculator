@@ -96,29 +96,26 @@
     .display{
       padding-bottom: 20px;
       padding-left: 10px;
-      padding-right: 15px;
       height: 100%;
       display: flex;
       overflow: hidden;
       justify-content: flex-end;
       align-items: flex-end;
       width: 100%;
-      color: white;
-      font-size: 25px;
+      color:white;
+      font-size: 30px;
     }
 
     #screen{
       width: 100%;
       text-align: end;
-      overflow: hidden;
     }
 
     .buttons{
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(5, 1fr);
-      row-gap: 15px;
-      column-gap: 15px;
+      gap: 12px;
       grid-template-areas: 
       "ac del percent divide"
       "seven eight nine times"
@@ -213,9 +210,9 @@
     }
 
     button{
-        height: 60px;
-        width: 60px;
-        border-radius: 30px;
+        height: 70px;
+        width: 70px;
+        border-radius: 35px;
         border: none;
         outline: none;
         color: var(--clr-fonts);
