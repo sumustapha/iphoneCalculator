@@ -50,6 +50,7 @@ function deleteSingle(){
 const equalsButton = document.querySelector('.equals')
 equalsButton.addEventListener('click', compute)
 function compute(){
+    let p =''
     let parsedStored = parseFloat(storedOperand)
     let parsedCurrent = parseFloat(currentOperand)
     if(chosenOp === undefined) return
@@ -66,7 +67,7 @@ function handleOperations(event){
         compute(chosenOp, storedOperand, currentOperand)
     } 
 
-    chosenOp = event.target ?? event
+    chosenOp = event.target?.innerText ?? event
     if(!done) return
         storedOperand = currentOperand
         currentOperand = '0'
